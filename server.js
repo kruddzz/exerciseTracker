@@ -17,15 +17,8 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitnessTracker", { useNewUrlParser: true });
 
-<<<<<<< HEAD
 
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
-=======
-// Start the server
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
-});
->>>>>>> 7a81a15d275bed11859e6a61f61133d0e71d723a
