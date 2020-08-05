@@ -13,7 +13,7 @@ router.post("/api/workouts", (req, res) => {
 
   router.put("/api/workouts/:id", (req , res) => {
     Workout.findByIdAndUpdate(
-      reg.params.id,
+      req.params.id,
       { $push: { exercises: req.body } },
       { new: true, runValidators: true }
     )
@@ -24,10 +24,21 @@ router.post("/api/workouts", (req, res) => {
         res.json(err);
       });
   });
-  
+
   router.get("/api/workouts", (req, res) => {
     Workout.find()
       .then(dbWorkouts => {
+        res.json(dbWorkouts);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
+
+  router.get("/api/workouts/range", (req, res) => {
+    Workout.find({})
+      .then(dbWorkouts => {
+        console.log(dbWorkouts)
         res.json(dbWorkouts);
       })
       .catch(err => {
