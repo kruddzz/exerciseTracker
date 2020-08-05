@@ -18,6 +18,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitnessTracker"
    useFindAndModify: false
   });
 
+// Routes
 app.use(require("./routes/api.js"));
 app.use(require("./routes/html.js"));
 
