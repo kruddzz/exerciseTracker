@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitnessTracker", {
+mongoose.connect(process.env.MONGOATLAS_URI || "mongodb://localhost/fitnessTracker", {
    useNewUrlParser: true,
    useFindAndModify: false
   });
